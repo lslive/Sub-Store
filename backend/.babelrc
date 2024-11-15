@@ -1,27 +1,22 @@
 {
     "presets": [
-        [
-            "@babel/preset-env"
-        ]
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      [
+        "module-resolver",
+        {
+          "root": ["./src"],  // 将 src 目录作为根目录
+          "alias": {
+            "@": "./src"  // 将 @ 映射到 src 目录
+          }
+        }
+      ]
     ],
     "env": {
-        "test": {
-            "presets": [
-                "@babel/preset-env"
-            ]
-        }
-    },
-    "plugins": [
-        [
-            "babel-plugin-relative-path-import",
-            {
-                "paths": [
-                    {
-                        "rootPathPrefix": "@",
-                        "rootPathSuffix": "src"
-                    }
-                ]
-            }
-        ]
-    ]
-}
+      "test": {
+        "presets": ["@babel/preset-env"]
+      }
+    }
+  }
+  
